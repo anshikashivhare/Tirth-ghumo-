@@ -18,7 +18,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} 
 
 .top-bar span {
   margin-right: 15px;
@@ -43,21 +43,40 @@ header .logo {
   font-weight: bold;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* puts logo on left and menu on right */
+  background-color: #000; /* adjust your navbar color */
+  padding: 0.8rem 2rem; /* adds breathing space inside */
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+}
+
 nav ul {
   display: flex;
   gap: 1.5rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
   color: #f9b233;
 }
+
 
 .menu-btn {
   background: #f9b233;
@@ -84,7 +103,7 @@ nav ul li a:hover {
 .hero-img {
   margin-top: 70px;
   width: 100%;
-  height: 950;
+  height: 1100px;
   object-fit: cover;
   position: absolute;
   top: 0;
@@ -163,7 +182,7 @@ nav ul li a:hover {
 }
 
 .section-header h2 {
-  font-size: 2rem;
+  font-size: 4px;
   font-weight: 700;
 }
 
@@ -370,7 +389,7 @@ nav ul li a:hover {
 }
 
 .intro-text h2 {
-  font-size: 2rem;
+  font-size: 9rem;
   max-width: 600px;
   margin: 0 auto 2rem;
 }
@@ -394,9 +413,9 @@ nav ul li a:hover {
   border-radius: 10px;
 }
 
-.gallery-subtitle {
+.gallery-subtitle p {
   font-family: 'Island Moments', cursive;
-  font-size: 60rem;
+  font-size: 40px;
   color: #f39c12;
   margin-bottom: 2rem;
 }
@@ -446,17 +465,18 @@ body {
 .testimonial-card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  width: 280px;
-  position: relative;
-  padding: 20px;
-  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  padding: 2.5rem 1.5rem 1.5rem;
+  position: relative; /* needed for image positioning */
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .testimonial-card img {
   width: 80px;
   height: 80px;
-  border-radius: 8px;
+  border-radius: 50%;
   position: absolute;
   top: -40px;
   left: 20px;
@@ -584,33 +604,49 @@ header {
   padding: 1rem 2rem;
 }
 
+/* NAVBAR FIX */
 .navbar {
+  position: fixed;                /* keeps it at the top */
+  top: 0;
+  left: 0;
+  width: 100%;                    /* full width */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #000;
+  padding: 1rem 3rem;
+  box-sizing: border-box;
+  z-index: 1000;                  /* ensures it stays above other elements */
 }
 
 .logo {
-  font-size: 1.5rem;
+  color: white;
+  font-size: 1.8rem;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links a {
-  color: #fff;
+.nav-links li a {
+  color: white;
   text-decoration: none;
-  transition: color 0.3s;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links .active {
-  color: #f39c12;
+.nav-links li a:hover {
+  color: #f9b233;
 }
+
+
+
 
 /* Hero */
 .hero {
@@ -622,7 +658,7 @@ header {
   text-align: center;
   background: url("images/hero.jpg") center/cover no-repeat;
   color: #fff;
-  padding: 2rem;
+  padding-top: 2rem;
 }
 
 .hero h2 {
@@ -997,15 +1033,18 @@ left: 734px;
 
 .footer-links {
   display: flex;
-  gap: 10rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5rem; /* reduced gap for balance */
   margin-right: 3rem;
-  padding: 3rem 5rem;  
+  flex-wrap: wr  
 }
 .footer-links h4 {
   font-size: 22px;
   margin-bottom: 0.5rem;
   color: #0B2727;
   margin-top: 0%;
+  margin-left: 0%;
 }
 .footer-links ul {
   list-style: none;
@@ -1025,14 +1064,14 @@ left: 734px;
   color: #f39c12;
 }
 .footer-links p {
-  text-align: left;
-  padding: 2px;
-  font-size: 14px;
-  margin-bottom:  0.3rem ;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: #6E7074;
-    
-
-
+  font-size: 14px;
+  line-height: 2.2rem;
+  margin: 0.3rem 0;
+  white-space: nowrap;
 }
 .footer-links strong{
   color: #000000;
@@ -1433,8 +1472,12 @@ h1, h2, h3, h4 {
 }
 
 .section-header h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+}
+.section-header h2 span{
+  color: #f39c12;
 }
 
 .carousel-nav i {
@@ -1503,7 +1546,7 @@ h1, h2, h3, h4 {
 
 .services-subtitle {
   font-family: 'Island Moments', cursive;
-  font-size: 18px;
+  font-size: 40px;
   font-style: italic;
   color: #f39c12;
   margin-bottom: 0.5rem;
@@ -1550,6 +1593,7 @@ h1, h2, h3, h4 {
   color: #555;
 }
 
+
 /* Gallery Section */
 .gallery-section {
   padding: 4rem 5rem;
@@ -1558,10 +1602,12 @@ h1, h2, h3, h4 {
 
 .intro-text h2 {
   font-size: 2rem;
-  max-width: 600px;
-  margin: 0 auto 2rem;
+  max-width: 800px;
+  margin: 0 auto 5rem;
 }
-
+.intro-text h2 span{
+  color: #f39c12;
+}
 .gallery-images {
   display: flex;
   justify-content: center;
@@ -1583,7 +1629,7 @@ h1, h2, h3, h4 {
 
 .gallery-subtitle {
   font-family: 'Island Moments', cursive;
-  font-size: 1.5rem;
+  font-size: 40px;
   color: #f39c12;
   margin-bottom: 2rem;
 }
@@ -1601,47 +1647,93 @@ h1, h2, h3, h4 {
 }
 
 /* Testimonials Section */
+/* === TESTIMONIALS SECTION === */
 .testimonials {
   padding: 4rem 5rem;
-  background-color: #faaf55;
+  background: linear-gradient(180deg, #faaf55 0%, #ffd9a8 100%);
   text-align: center;
-  gap: 4rem;
 }
 
-.testimonials-title {
+.testimonials h2 {
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   color: white;
 }
 
 .testimonials-cards {
   display: flex;
   justify-content: center;
-  gap: 5rem;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
+/* === Each Testimonial Card === */
 .testimonial-card {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+/* === Image inside card === */
 .testimonial-card img {
-  width: 250px;
+  width: 50%;
   height: 100px;
-  border-radius: 10%;
+  border-radius: 50%;
+  object-fit: cover; /* keeps proportions consistent */
+  border-radius: 10px;
   margin-bottom: 1rem;
+}
+
+/* === Text content === */
+.testimonial-card h4 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.testimonial-card span {
+  display: block;
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
 }
 
 .testimonial-card p {
   font-style: italic;
   color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 1rem 0;
 }
 
-.testimonial-card h4 {
-  margin: 1rem 0 0;
+.testimonial-card .stars {
+  color: #000;
+  font-size: 1.1rem;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 3rem 2rem;
+  }
+
+  .testimonials-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    width: 90%;
+  }
 }
 
 /* Footer */
@@ -1737,3 +1829,106 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
   }
 }
+
+  /* Registration Section */
+.register {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  padding-top: 70px; /* keeps space for fixed navbar */
+}
+
+.register-box {
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  width: 380px;
+  text-align: center;
+}
+
+.register-box h2 {
+  margin-bottom: 1.5rem;
+}
+
+.register-box form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.register-box button {
+  width: 100%;
+  background-color: #f9b233;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-box button:hover {
+  background-color: #e5a12d;
+}
+
+.register-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+  /* Centered Login Section */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fafafa;
+  padding-top: 70px; /* ensures it’s not hidden under the fixed navbar */
+}
+
+.login-box {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  width: 380px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 1.5rem;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-box button {
+  width: 100%;
+  background-color: #f9b233;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background-color: #e5a12d;
+}
+
+.login-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
